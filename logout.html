@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdminBoard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="../fontawesome/fontawesome/css/all.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+       <style>
+         @font-face {font-family: 'CaviarDreams';src: url('CaviarDreams.ttf');}
+         a, h3,h2, h5, i, tr, td { font-family:'CaviarDreams'; }
+         p, li, h6, button, input,  textarea, span{ font-family: 'CaviarDreams';}
+         
+       </style>
+</head>
+<body>
+
+  <div class="container-fluid bg-dark">
+    <div class="container">
+      
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  
+              <a href="index.html" class="navbar-brand">AdminBoard</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-expanded="false" aria-label="toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                  <div class="collapse navbar-collapse my-auto" id="menu">
+              <div class="col">
+               <ul class="navbar-nav ">
+                   <li class="nav-item active">
+                         <a href="index.html" class="nav-link">Dashboard <span class="sr-only">(current)</span> </a>
+                      </li>
+                      <li class="nav-item">
+                         <a href="post.html" class="nav-link">Posts</a>
+                      </li>
+                      <li class="nav-item">
+                          <a href="categorie.html" class="nav-link">Categories</a>
+                      </li>
+                      <li class="nav-item mr-auto">
+                          <a href="utilisateur.html" class="nav-link">Utilisateurs</a>
+                      </li>
+                      <li class="nav-item">
+                                  <a href="#" class="nav-link dropdown-toggle" type="button" data-toggle="dropdown" 
+                                        aria-haspopup="true" aria-expanded="false" id="bienvenu" data-display="statice">
+                                    <span class="fas fa-user"></span> Bienvenu Tchiffa 
+                                    </a> 
+                                            <div class="dropdown-menu dropdown-menu-lg-right bg-white shadow-lg"aria-labelledby="bienvenu">
+                                            <a href="seditprofil.html" class="dropdown-item"> <i class="fas fa-user-circle"></i> Profil</a>
+                                            <a href="sparametres.html" class="dropdown-item"> <i class="fas fa-cog" ></i>  Parametres</a>
+                                            </div>                                               
+                      </li>
+                      <li class="nav-item" >
+                        <a href="logout.html" class="nav-link"><span class="fas fa-user-times"></span> Logout</a>
+                    </li>
+                   </ul> 
+  
+                 </div>
+                </nav>
+            </div>
+        </div>
+
+<div class="container-fluid bg-primary text-white p-2 ">
+  <div class="container ">
+    <i class="fas fa-user fa-2x"> <span>AdminBoard</span> </i>
+  </div>
+</div>
+
+ <!--les AJOUTS--> 
+<div class="container-fluid pb-3 bg-light text-white p-3 shadow-lg">
+  <div class="container">
+      </div> 
+      </div>
+ 
+
+
+
+<!--Tabeau et les postes recents--> 
+<div class="contener-fluid">
+<div class="container mt-5 mb-5">
+   <!--Part gauche--> 
+   <div class="row">
+    <div class="col-sm-7 col-lg-4  mx-auto">
+      <div class="card ">
+        <div class="card-header text-dark">
+          Connexion
+          </div>
+         <div class="card-body text-dark">
+          <form class="text-dark">
+            <div class="mb-3">
+                <label for="titre">Email</label>
+                <input type="email" name="titre" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="titre">Password</label>
+              <input type="password" name="titre" class="form-control" required>
+          </div>
+
+          <div class="mb-3">
+            
+            <a href="index.html" class="btn btn-outline-primary form-control bg-primary text-white" type="button"> Login</a>
+        </div>
+          </form>
+
+         </div>
+      
+      </div>
+     
+    </div>
+
+    </div>
+ 
+  
+    </div>
+
+  </div>
+
+
+<!--Footer-->
+
+<div class="container-fluid  bg-dark text-center text-white p-4">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h5>Copyright &copy; 2020 adminBoard</h5> 
+        </div>
+      </div>
+    </div>
+  </div>
+
+   <!--JavaScript-->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        
+        <script src="bootstrap.js"></script>
+        <script src="bootstrap.bundle.js"></script>
+        <script src="Jquery.js"></script>
+</body>
+</html>

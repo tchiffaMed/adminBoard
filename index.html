@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdminBoard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="../fontawesome/fontawesome/css/all.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+
+    <!--What you see is what you get-->
+   
+		<script src="Jquery.js"></script>
+		<script>
+			$(document).ready(function() {
+				$("#txtEditor").Editor();
+			});
+		</script>
+		<link href="editor.css" type="text/css" rel="stylesheet"/>
+     
+       <style>
+         @font-face {font-family: 'CaviarDreams';src: url('CaviarDreams.ttf');}
+         a, h3,h2, h4, h5, i, tr, td { font-family:'CaviarDreams'; }
+         p, li, h6, button, input,  textarea, span{ font-family: 'CaviarDreams';}
+         
+       </style>
+</head>
+<body>
+
+  <div class="container-fluid bg-dark">
+    <div class="container">
+      
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  
+              <a href="index.html" class="navbar-brand">AdminBoard</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-expanded="false" aria-label="toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                  <div class="collapse navbar-collapse my-auto" id="menu">
+              <div class="col">
+               <ul class="navbar-nav ">
+                   <li class="nav-item active">
+                         <a href="index.html" class="nav-link">Dashboard <span class="sr-only">(current)</span> </a>
+                      </li>
+                      <li class="nav-item">
+                         <a href="post.html" class="nav-link">Posts</a>
+                      </li>
+                      <li class="nav-item">
+                          <a href="categorie.html" class="nav-link">Categories</a>
+                      </li>
+                      <li class="nav-item mr-auto">
+                          <a href="utilisateur.html" class="nav-link">Utilisateurs</a>
+                      </li>
+                      <li class="nav-item">
+                                  <a href="#" class="nav-link dropdown-toggle" type="button" data-toggle="dropdown" 
+                                        aria-haspopup="true" aria-expanded="false" id="bienvenu" data-display="statice">
+                                    <span class="fas fa-user"></span> Bienvenu Tchiffa 
+                                    </a> 
+                                            <div class="dropdown-menu dropdown-menu-lg-right bg-white shadow-lg"aria-labelledby="bienvenu">
+                                            <a href="seditprofil.html" class="dropdown-item"> <i class="fas fa-user-circle"></i> Profil</a>
+                                            <a href="sparametres.html" class="dropdown-item"> <i class="fas fa-cog" ></i>  Parametres</a>
+                                            </div>                                               
+                      </li>
+                      <li class="nav-item" >
+                        <a href="logout.html" class="nav-link"><span class="fas fa-user-times"></span> Logout</a>
+                    </li>
+                   </ul> 
+  
+                 </div>
+                </nav>
+            </div>
+        </div>
+
+
+
+<div class="container-fluid bg-primary text-white p-3">
+  <div class="container ">
+    <i class="fas fa-cog fa-2x"><span> Dashboard</span> </i>
+  </div>
+</div>
+
+ <!--les AJOUTS--> 
+<div class="container-fluid pb-3 bg-light text-white shadow-lg">
+  <div class="container my-auto ">
+
+      <div class="row">
+        <div class="col-md-9">
+          <form>
+            <div class="form-row">
+    <!--Post--> 
+              <div class="col-md-4">
+                    <button type="button" class="form-control mt-3 bg-primary text-white text-center"
+                     data-target="#post" data-toggle="modal"> <i class="fas fa-plus"></i> Ajouter un post </button>
+                
+             <!--Post Modal--> 
+                      <div class="modal fade text-dark" id="post" tabindex="-1" role="dialog" aria-labelledby="ajouterunpost" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header bg-primary">
+                              <h5 class="modal-title text-white" id="ajouterpost">Ajouter un post</h5>
+                              <button type="button" class="close text-white" data-dismiss="modal" aria-label="close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <form class="text-dark">
+                                <div class="mb-3">
+                                    <label for="titre">Titre</label>
+                                    <input type="text" name="titre" class="form-control">
+                                </div>
+                                
+
+                              <label for="categorie">Category</label>
+                                <div class="input-group"> 
+                                
+                                  <select name="categorie" id="" class="custom-select form-control">
+                                    <option selected>Web Developper</option>
+                                    <option value="1">Tech Gadgets</option>
+                                    <option value="2">Business</option>
+                                    <option value="3">Health and wellness</option>
+                                  </select>
+                                </div>
+                                    <div class="mb-3 mt-3">
+                                      <label for="imageupload">Image-Upload</label> <br>
+                                      <input type="file" name="imageupload" class=" btnoutline-none">
+                                        <p >max size 3mb</p>
+                                    </div>
+                                <div>
+                                  <label for="body">body</label>
+                                <textarea name="body" id="txtEditor"  class="form-control"></textarea>
+                                </div>
+                                
+                                
+                              </form>
+                            </div>
+                            <div class="modal-footer">
+                              <button class="btn btn-secondary">Close</button>
+                              <button class="btn btn-primary">Save changes</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+              </div>
+
+    <!--Categorie--> 
+              <div class="col-md-4">
+                    <button type="button" class="form-control mt-3 bg-success text-white text-center" 
+                    data-target="#categories" data-toggle="modal"> <i class="fas fa-plus"></i> Ajouter une categorie </button>
+              
+            <!--Categorie Modal--> 
+                      <div class="modal fade text-dark" id="categories" tabindex="-1" role="dialog" aria-labelledby="ajouterunpost" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+
+                          <div class="modal-content">
+                            <div class="modal-header bg-success">
+                                  <h5 class="modal-title text-white" id="ajouterunpost">Ajouter un post</h5>
+                                  <button type="button" class="close text-white" data-dismiss="modal" aria-label="close">
+                                      <span aria-hidden="true">&times;</span>
+                                  </button>
+                            </div>
+
+                            <div class="modal-body">
+                              <form class="text-dark">
+                                <div class="mb-3">
+                                    <label for="titre">Titre</label>
+                                    <input type="text" name="titre" class="form-control">
+                                </div>
+                              </form>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button class="btn btn-secondary">Close</button>
+                                <button class="btn btn-success">Save changes</button>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+            </div>
+              
+
+     <!--utilisateur--> 
+              <div class="col-md-4">
+                    <button type="button" class="form-control mt-3 bg-warning text-white text-center" 
+                    data-target="#utilisateur" data-toggle="modal"> <i class="fas fa-plus"></i> Ajouter un utilisateur </button>
+              
+            <!--utilisateur Modal--> 
+                    <div class="modal fade text-dark" id="utilisateur" tabindex="-1" role="dialog" aria-labelledby="ajouterunpost" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+
+                        <div class="modal-content">
+                          <div class="modal-header bg-warning">
+                            <h5 class="modal-title text-white" id="ajouterpost">Ajouter un post</h5>
+                            <button type="button" class="close text-white" data-dismiss="modal" aria-label="close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+
+                            <form class="text-dark">
+                              <div class="mb-3">
+                                  <label for="titre">Name</label>
+                                  <input type="text" name="titre" class="form-control">
+                              </div>
+
+                              <div class="mb-3">
+                                <label for="titre">Email</label>
+                                <input type="email" name="titre" class="form-control">
+                            </div>
+
+                            <div class="mb-3">
+                              <label for="titre">Password</label>
+                              <input type="password" name="titre" class="form-control">
+                          </div>
+                        
+                          <div class="mb-3">
+                            <label for="titre">Titre</label>
+                            <input type="text" name="titre" class="form-control">
+                        </div>
+                            </form>
+                          </div>
+                          <div class="modal-footer">
+                            <button class="btn btn-secondary">Close</button>
+                            <button class="btn btn-warning">Save changes</button>
+                          </div>
+                        
+
+                        </div>
+                      </div>
+                    </div>
+            </div>
+              </div>
+          </form>
+      </div>  
+    
+        </div>
+      </div> 
+  </div>
+
+
+<!--Tabeau et les postes recents--> 
+<div class="contener-fluid">
+  <div class="container mt-3 mb-3">
+     <!--Part gauche--> 
+     <div class="row">
+      <div class="col-md-9">
+        <div class="card">
+       <div class="card-header">
+         Les postes recents
+       </div>
+  <table class="table table-striped">
+         
+          <thead class="bg-dark text-white">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Titre</th>
+              <th scope="col">Categorie</th>
+              <th scope="col">Date du post</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+  
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Post one</td>
+              <td>Web Development</td>
+              <td>April 10, 2020 </td>
+              <td ><a href="postOne.html" type="button" class="btn bg-secondary text-white" placeholder=""> <i class="fas fa-angle-double-right"></i> Details </a></td>
+            </tr>
+  
+            <tr>
+              <th scope="row">2</th>
+              <td>Post Two</td>
+              <td>Tech Gadgets</td>
+              <td>April 10, 2020</td>
+              <td><a href="postOne.html" type="button" class="btn bg-secondary text-white" placeholder=""> <i class="fas fa-angle-double-right"></i> Details </a></td>
+            </tr>
+  
+            <tr>
+              <th scope="row">3</th>
+              <td>Post Three</td>
+              <td>Web Development</td>
+              <td>April 10, 2020</td>
+              <td><a href="postOne.html" type="button" class="btn bg-secondary text-white" placeholder=""> <i class="fas fa-angle-double-right"></i> Details </a></td>
+            </tr>
+  
+            <tr>
+              <th scope="row">4</th>
+              <td>Post Four</td>
+              <td>Business</td>
+              <td>April 10, 2020</td>
+              <td><a href="postOne.html" type="button" class="btn bg-secondary text-white" placeholder=""> <i class="fas fa-angle-double-right"></i> Details </a></td>
+            </tr>
+  
+            <tr>
+              <th scope="row">5</th>
+              <td>Post Five</td>
+              <td>Web Development</td>
+              <td>April 10, 2020</td>
+              <td><a href="postOne.html" type="button" class="btn mt-3 bg-secondary text-white" placeholder=""> <i class="fas fa-angle-double-right"></i> Details </a></td>
+            </tr>
+          
+  
+          <tr>
+            <th scope="row">6</th>
+            <td>Post Six</td>
+            <td>Health and Welness</td>
+            <td>April 10, 2020</td>
+            <td><a href="postOne.html" type="button" class="btn mt-3 bg-secondary text-white" placeholder=""> <i class="fas fa-angle-double-right"></i> Details </a></td>
+          </tr>
+        </tbody>
+        </table>
+     </div>
+        
+      </div>
+  
+    <!--Part droite--> 
+      <div class="col-md-3">
+      
+          <div class="row">
+            <div class="col-12 text-white text-center  pb-2">
+              
+                <div class=" card bg-primary" >
+                  <h4 class="mt-2">Posts</h4>
+                 <i class="fas fa-pen fa-2x"> <span>6</span></i>
+                 <div>
+                  <button class="btn text-white border-white mt-2 mb-2" type="button">Voir plus</button>
+                 </div>
+                </div>
+              </div>
+            </div>
+          
+  
+          <div class="row mt-3">
+            <div class="col-12 text-white text-center pt-1 pb-2">
+              <div class="card bg-success ">
+                <h4 class="mt-2">Catégories</h4>
+               <i class="far fa-folder-open fa-2x">  <span>4</span></i>
+               <div>
+                <button class="btn text-white border-white mt-2 mb-2" type="button">Voir plus</button>
+               </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="row mt-3">
+            <div class="col-12 text-white text-center pt-1 pb-3">
+                <div class="card bg-warning">
+                  <h4 class="mt-2">Utiliateurs</h4>
+                 <i class="fa fa-users fa-2x"> <span>13</span></i>
+                 <div>
+                  <button class="btn text-white border-white mt-2 mb-2" type="button">Voir plus</button>
+                 </div>
+                </div>
+              </div>
+            </div>
+         
+  
+  
+          
+        </div>
+        
+      </div>
+      </div>
+    </div>
+
+<!--Footer-->
+
+<div class="container-fluid  bg-dark text-center text-white p-4">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h5>Copyright &copy; 2020 adminBoard</h5> 
+        </div>
+      </div>
+    </div>
+  </div>
+
+   <!--JavaScript-->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        
+        <script src="Jquery.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="editor.js"></script>
+        
+</body>
+</html>
